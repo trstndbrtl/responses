@@ -1,0 +1,11 @@
+<?php
+
+function gm_response_theme() {
+  return [
+    'response_logged_block' => [
+      'variables' => [
+        'participant' => NULL,
+      ],
+    ],
+  ];
+}

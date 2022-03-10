@@ -1,0 +1,5 @@
+name: 'GM Response Form'
+type: module
+description: 'A form to add response to question.'
+core_version_requirement: ^8.9.1 || ^9
+package: 'GM'

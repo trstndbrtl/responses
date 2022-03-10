@@ -1,0 +1,53 @@
+{% if participant and participant.uuid %}
+  <div id="gm-header" class="uk-section uk-section-muted">
+    {# {{participant.uuid}} #}
+    {# {{participant.gender}} #}
+    {# {{participant.activity}} #}
+    {# {{participant.age}} #}
+    {# {{participant.postal_code}} #}
+    {{participant.timestamp|format_date('medium')}}
+
+     {% if participant.gender and participant.gender == 'femme' %}
+      <p>Je suis une Femme</p>
+    {% else %}
+      <p>Je suis une homme</p>
+    {% endif %}
+
+    {% if participant.activity and participant.activity == 'sans_activite' %}
+      <p>Je suis sans activité</p>
+    {% elseif participant.activity and participant.activity == 'etudiant' %}
+      <p>Je suis étudiant.e</p>
+    {% elseif participant.activity and participant.activity == 'actif' %}
+      <p>Je suis actif</p>
+    {% elseif participant.activity and participant.activity == 'retraite' %}
+      <p>Je suis retraité.e</p>
+    {% else %}
+      <p>Je préfére ne pas dire mon activité</p>
+    {% endif %}
+
+    {% if participant.age and participant.age == '20' %}
+      <p>J'ai entre 20 et 40 ans</p>
+    {% elseif participant.age and participant.age == '20_40' %}
+      <p>J'ai entre 20 et 40 ans</p>
+    {% elseif participant.age and participant.age == '40_60' %}
+      <p>J'ai entre 20 et 40 ans</p>
+    {% elseif participant.age and participant.age == '60' %}
+      <p>J'ai entre 20 et 40 ans</p>
+    {% else %}
+      <p>Je préfére ne pas dire mon age</p>
+    {% endif %}
+
+    {% if participant.postal_code %}
+      <p>Et mon code postale est le  <strong>{{participant.postal_code}}</strong></p>
+    {% endif %}
+
+
+  </div>
+
+{% else %}
+
+  <a href="/">Veuillez créer une session pour participer</a>
+
+{% endif %}
+
+

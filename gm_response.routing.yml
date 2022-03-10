@@ -1,0 +1,7 @@
+gm_response.find_code_postal:
+  path: '/autocomplete/code-postal'
+  defaults:
+    _controller: '\Drupal\gm_response\Controller\BuildCsvController::findCodePostal'
+    _format: json
+  requirements:
+    _permission: 'access content'

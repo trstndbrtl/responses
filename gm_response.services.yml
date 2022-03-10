@@ -1,0 +1,10 @@
+services:
+  gm_response.builder.data:
+    class: Drupal\gm_response\ResponseStorageInterface
+    arguments: ['@database', '@state', '@request_stack']
+    tags:
+      - { name: backend_overridable }
+  gm_response.redirect_participants:
+    class: Drupal\gm_response\EventSubscriber\ParticipantsRedirect
+    tags:
+      - { name: event_subscriber }

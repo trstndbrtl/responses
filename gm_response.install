@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Install and update functions for the gm_adhesion module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function gm_response_schema() {
+
+  $schema['users_participants_questions'] = [
+    'description' => 'The list of users who have participate.',
+    'fields' => [
+      'id' => [
+        'description' => 'The row ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uuid' => [
+        'description' => 'The uuid of the session',
+        'type' => 'varchar_ascii',
+        'length' => 252,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'gender' => [
+        'description' => 'the gender of the participant.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'activity' => [
+        'description' => 'the activity of the participant.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'age' => [
+        'description' => 'the age of the participant.',
+        'type' => 'varchar_ascii',
+        'length' => 100,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'postal_code' => [
+        'description' => 'the postal code of the participant.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => 1,
+      ],
+      'more1' => [
+        'description' => 'More information 1',
+        'type' => 'varchar_ascii',
+        'length' => 252,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'more2' => [
+        'description' => 'More information 2',
+        'type' => 'varchar_ascii',
+        'length' => 252,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'more3' => [
+        'description' => 'More information 3',
+        'type' => 'varchar_ascii',
+        'length' => 252,
+        'not null' => FALSE,
+        'default' => '',
+      ],
+      'timestamp' => [
+        'description' => 'The date of the paticipation.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'id' => ['id'],
+    ],
+  ];
+
+  return $schema;
+}
